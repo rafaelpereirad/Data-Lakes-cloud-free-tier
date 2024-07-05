@@ -18,6 +18,10 @@ Open Source Tools description:
 
 "The **Hadoop Distributed File System** (HDFS) is a distributed file system designed to run on commodity hardware. HDFS is highly fault-tolerant and is designed to be deployed on low-cost hardware. HDFS provides high throughput access to application data and is suitable for applications that have large data sets."
 
+"The **Apache Ambari** project is aimed at making Hadoop management simpler by developing software for provisioning, managing, and monitoring Apache Hadoop clusters. Ambari provides an intuitive, easy-to-use Hadoop management web UI backed by its RESTful APIs."
+
+"**Nifi** is an easy to use, powerful, and reliable system to process and distribute data"
+
 "**Apache Kafka** is an open-source distributed event streaming platform used by thousands of companies for high-performance data pipelines, streaming analytics, data integration, and mission-critical applications."
 
 "**ZooKeeper** is a centralized service for maintaining configuration information, naming, providing distributed synchronization, and providing group services. All of these kinds of services are used in some form or another by distributed applications."
@@ -28,5 +32,10 @@ Open Source Tools description:
 
 "**Oozie** is a workflow scheduler system to manage Apache Hadoop jobs."
 
+"**Superset** is fast, lightweight, intuitive, and loaded with options that make it easy for users of all skill sets to explore and visualize their data, from simple line charts to highly detailed geospatial charts."
 
+"**Elasticsearch** is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data for lightning fast search, fine‑tuned relevancy, and powerful analytics that scale with ease."
 
+"**Apache HBase®** is the Hadoop database, a distributed, scalable, big data store."
+
+"**PostgreSQL** is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance."
