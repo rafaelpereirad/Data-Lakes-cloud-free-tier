@@ -4,13 +4,13 @@
 
 Cluster with Master/Worker Architecture:
 
-<img width="737" alt="image" src="https://github.com/rafaelpereirad/data-lake-free-tier-OCI/assets/95055138/8317fbe0-6698-470f-ab00-e980dada01a0">
+<img width="760" alt="image" src="https://github.com/user-attachments/assets/4357cad5-58eb-494e-bc92-57b1e2ad8f8f">
 
 ## Stack
 
 Stack architecture:
 
-<img width="760" alt="image" src="https://github.com/rafaelpereirad/data-lake-free-tier-OCI/assets/95055138/7330eb00-79bc-444e-817e-e19dbe315bce">
+![image](https://github.com/user-attachments/assets/0bee64b5-6f5d-4efc-8cc1-ce363c7ad2d9)
 
 Open Source Tools description:
 
