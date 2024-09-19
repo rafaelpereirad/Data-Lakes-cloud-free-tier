@@ -4,13 +4,13 @@
 
 Cluster with Master/Worker Architecture:
 
-<img width="760" alt="image" src="https://github.com/user-attachments/assets/4357cad5-58eb-494e-bc92-57b1e2ad8f8f">
+<img width="660" alt="image" src="https://github.com/user-attachments/assets/4357cad5-58eb-494e-bc92-57b1e2ad8f8f">
 
 ## Stack
 
 Stack architecture:
 
-![image](https://github.com/user-attachments/assets/0bee64b5-6f5d-4efc-8cc1-ce363c7ad2d9)
+<img width="560" alt="image" src="https://github.com/user-attachments/assets/0bee64b5-6f5d-4efc-8cc1-ce363c7ad2d9">
 
 Open Source Tools description:
 
