@@ -1,3 +1,0 @@
-# Ambari Configuration
-
-
