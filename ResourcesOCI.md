@@ -28,3 +28,21 @@ Inside an AD – High Scale, High Performance Network
 <img width="660" alt="image" src="https://github.com/user-attachments/assets/9a6cc1e6-75f5-4850-8513-0839851b8226">
 
 ## VCN
+
+• A private network that you set up in the Oracle data centers, with firewall rules and specific types of communication gateways that you can choose to use 
+
+• A VCN covers a single, contiguous IPv4 CIDR block of your choice 
+
+• A VCN resides within a single region
+
+• Each VCN network is subdivided into subnets 
+
+• Each subnet can be AD-specific or Regional (recommended) 
+
+• AD specific subnet is contained within a single AD in a multi-AD region 
+
+• Regional subnet spans all three ADs in a multi-AD region 
+
+• Each subnet has a contiguous range of IPs, described in CIDR notation 
+
+
