@@ -10,7 +10,7 @@ Cluster with Master/Worker Architecture:
 
 Stack architecture:
 
-<img width="560" alt="image" src="https://github.com/user-attachments/assets/0bee64b5-6f5d-4efc-8cc1-ce363c7ad2d9">
+<img width="660" alt="image" src="https://github.com/user-attachments/assets/84f3269b-2cfa-44a8-b739-eeb838d002e7">
 
 Open Source Tools description:
 
@@ -30,12 +30,6 @@ Open Source Tools description:
 
 "**Apache Spark™** is a multi-language engine for executing data engineering, data science, and machine learning on single-node machines or clusters."
 
-"**Oozie** is a workflow scheduler system to manage Apache Hadoop jobs."
-
 "**Superset** is fast, lightweight, intuitive, and loaded with options that make it easy for users of all skill sets to explore and visualize their data, from simple line charts to highly detailed geospatial charts."
-
-"**Elasticsearch** is a distributed, RESTful search and analytics engine capable of addressing a growing number of use cases. As the heart of the Elastic Stack, it centrally stores your data for lightning fast search, fine‑tuned relevancy, and powerful analytics that scale with ease."
-
-"**Apache HBase®** is the Hadoop database, a distributed, scalable, big data store."
 
 "**PostgreSQL** is a powerful, open source object-relational database system with over 35 years of active development that has earned it a strong reputation for reliability, feature robustness, and performance."
