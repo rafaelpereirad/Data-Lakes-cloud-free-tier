@@ -17,6 +17,7 @@ Develop and deploy data pipelines and storage to analyze large amounts of data. 
 
 <img width="968" alt="image" src="https://github.com/user-attachments/assets/55704e3b-ba80-420c-ba25-a684f8790abf">
 
-
-
 https://cloud.google.com/blog/products/storage-data-transfer/hdfs-vs-cloud-storage-pros-cons-and-migration-tips
+
+HDFS vs cloud-storage
+
