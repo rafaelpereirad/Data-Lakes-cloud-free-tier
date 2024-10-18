@@ -19,5 +19,46 @@ Develop and deploy data pipelines and storage to analyze large amounts of data. 
 
 https://cloud.google.com/blog/products/storage-data-transfer/hdfs-vs-cloud-storage-pros-cons-and-migration-tips
 
-HDFS vs cloud-storage
+### HDFS vs cloud-storage
+
+Cons:
+
++ Cloud Storage may increase I/O variance
+  + In many situations, Cloud Storage has a higher I/O variance than HDFS.
+  + This can be problematic if you have consistent I/O requirements, such as an application backed by HBase or another NoSQL database.
++ Cloud Storage does not support file appends or truncates
+  + Objects are immutable, which means that an uploaded object cannot change throughout its storage lifetime.
+  + In practice, this means that you cannot make incremental changes to objects, such as append operations or truncate operations.
++ Cloud Storage is not POSIX-compliant
++ Cloud Storage may not expose all file system information
+  + Cloud Storage abstracts the entire management layer of all storage
++ Cloud storage may have greater request latency
+  + Cloud storage may have a greater request round-trip latency compared to HDFS.
+
+Pros:
+
++ Lower costs
++ Separation from compute and storage
+  + When you store data in Cloud Storage instead of HDFS, you can access it directly from multiple clusters.
++ Interoperability
+  + Storing data in Cloud Storage enables seamless interoperability between Spark and Hadoop instances as well as other GCP services
++ HDFS compatibility with equivalent (or better) performance
+  + You can access Cloud Storage data from your existing Hadoop or Spark jobs simply by using the **gs://** prefix instead of **hfds:://**.
++ High data availability
+  + Data stored in Cloud Storage is highly available and globally replicated (when using multi-regional storage) without a loss of performance.
+  + Cloud Storage is not vulnerable to NameNode single point of failure or even cluster failure.
++ No storage management overhead
+  + Unlike HDFS, Cloud Storage requires no routine maintenance such as running checksums on the files, upgrading or rolling back to a previous version of the file system and other administrative tasks.
++ Quick startup
+  + With Cloud Storage, you can start your jobs as soon as the task nodes start
+  + In HDFS, a MapReduce job can’t start until the NameNode is out of safe mode—a process that can take from a few seconds to many minutes, depending on the size and state of your data
++ Google IAM security
++ Global consistency
+  + Cloud Storage provides strong global consistency for the below operations; this includes both data and metadata.
+    + Read-after-write
+    + Read-after-metadata-update
+    + Read-after-delete
+    + Bucket listing
+    + Object listing
+    + Granting access to resources
 
