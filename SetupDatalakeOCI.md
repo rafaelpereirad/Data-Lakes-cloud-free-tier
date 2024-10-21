@@ -40,4 +40,6 @@ worker3
 <img width="560" alt="image" src="https://github.com/user-attachments/assets/1265efee-37d0-4c15-9b33-a795108d5d1c">
 
 
+ssh to instance and run script:
 
+./hdfscorrections.sh
