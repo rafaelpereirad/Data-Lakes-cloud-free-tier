@@ -42,4 +42,7 @@ worker3
 
 ssh to instance and run script:
 
+```
 ./hdfscorrections.sh
+```
+
