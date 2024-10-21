@@ -3,6 +3,8 @@
 
 ## 1.1 Initial update and necessary tools installation
 
+In both Master and Worker nodes:
+
 ```sh
 sudo yum update -y
 
@@ -21,7 +23,11 @@ sudo yum update -y
 sudo yum install odp-select.aarch64 -y
 
 sudo yum install ambari-agent.aarch64 -y
+```
 
+Only in Master node:
+
+```sh
 sudo yum install ambari-server.aarch64 -y
 
 sudo yum install postgresql-server postgresql-contrib -y
@@ -38,13 +44,17 @@ enabled=0
 
 sudo systemctl start chronyd
 sudo systemctl enable chronyd
+```
 
+Set up a user console in case ssh permissions get broken in machines, you can access it in OCI console connection:
+
+```sh
 sudo useradd console
 sudo usermod -aG wheel console
 sudo passwd console
 ```
 
-Type in a password for user console
+<img width="460" alt="image" src="https://github.com/user-attachments/assets/84ea17ee-0920-4853-ad92-03561af8e189">
 
 ```sh
 sudo nano /etc/hosts
@@ -59,12 +69,18 @@ Copy on top:
 10.0.0.5   worker3
 ```
 
-Create ssh key and copy in Worker nodes:
+Create ssh key pair in master:
 
 ```sh
 ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
 cat .ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 cat ~/.ssh/authorized_keys
+```
+
+Copy the generated key in Worker nodes:
+
+```
+sudo nano /root/.ssh/authorized_keys
 ```
 
 ## 1.3 Setting up Ambari-server
