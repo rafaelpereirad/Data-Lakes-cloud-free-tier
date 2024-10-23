@@ -27,11 +27,16 @@ cat /var/log/ambari-server/ambari-server.log
 ```sh
 sudo ambari-agent start
 ```
-# Zookeeper
 
-export ZOOKEEPER_HOME="/usr/odp/1.2.2.0-128/zookeeper"
-export PATH=$PATH:$ZOOKEEPER_HOME/bin
-export PATH=$ZOOKEEPER_HOME/bin:$PATH
+# HDFS
+
+Switch user to hdfs:
+
+```sh
+sudo su hdfs
+```
+
+# Zookeeper
 
 Start/Stop/Status Zookeeper server:
 
@@ -45,3 +50,4 @@ Connect to Zookeeper CLI:
 
 zkCli.sh -server 
 zkServer.sh status
+
