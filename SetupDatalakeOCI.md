@@ -1,3 +1,7 @@
+# Terraform
+
+
+
 
 # Ambari
 
@@ -52,4 +56,30 @@ ssh to instance and run script:
 After setting up all services:
 
 <img width="1400" alt="image" src="https://github.com/user-attachments/assets/048ebbcd-98b4-454a-9f33-392813753d69">
+
+Interfaces:
+
+HDFS:
+
+MasterIP:50070
+
+<img width="1290" alt="image" src="https://github.com/user-attachments/assets/83b93976-9e75-4582-9e62-42899d5748b9">
+
+YARN:
+
+MasterIP:8088
+
+<img width="1360" alt="image" src="https://github.com/user-attachments/assets/16dd9d29-ccc9-49a3-a941-596f0cf14de4">
+
+MapReduce:
+
+MasterIP:19888
+
+<img width="1387" alt="image" src="https://github.com/user-attachments/assets/799ea02c-73e3-4350-be98-6ada62524a9a">
+
+NiFi: (HTTP - not encrypted)
+
+http://MasterIP:9090/nifi/
+
+<img width="1392" alt="image" src="https://github.com/user-attachments/assets/2f9bd457-07f1-4b5b-845f-c2500bf26a9c">
 
