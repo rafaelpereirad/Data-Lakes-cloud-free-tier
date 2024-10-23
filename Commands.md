@@ -36,6 +36,28 @@ Switch user to hdfs:
 sudo su hdfs
 ```
 
+# Hive 
+
+Switch user to hive:
+
+```sh
+sudo su hive
+```
+
+# Spark 
+
+Switch user to spark:
+
+```sh
+sudo su spark
+```
+
+Launch spark-shell:
+
+```sh
+spark-shell
+```
+
 # Zookeeper
 
 Start/Stop/Status Zookeeper server:
