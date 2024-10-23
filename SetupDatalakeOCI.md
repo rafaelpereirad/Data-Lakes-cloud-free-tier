@@ -6,11 +6,15 @@ Check created instances in Compute > Instances:
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/cd96fd5b-9f21-412c-9148-fa49c9ea1d08">
 
-Allow an IP address to have full access to intances
+Allow an IP address to have full access to intances in order to access cluster resources:
+
+
 
 # Ambari
 
-Access Public_IP_Master:8080
+Access in the browser
+
+Public_IP_Master:8080
 
 <img width="548" alt="image" src="https://github.com/user-attachments/assets/fb63589a-5254-4400-b2d5-3a1d528eb138">
 
@@ -82,9 +86,90 @@ MasterIP:19888
 
 <img width="1187" alt="image" src="https://github.com/user-attachments/assets/799ea02c-73e3-4350-be98-6ada62524a9a">
 
+Spark3:
+
+<img width="1005" alt="image" src="https://github.com/user-attachments/assets/f91a3dfe-73fb-4e04-92e4-30a112f75c1a">
+
 NiFi: (HTTP - not encrypted)
 
 http://MasterIP:9090/nifi/
 
 <img width="1192" alt="image" src="https://github.com/user-attachments/assets/2f9bd457-07f1-4b5b-845f-c2500bf26a9c">
+
+# Commands
+
+### Ambari
+
+Start/Stop/Restart Ambari server:
+
+```sh
+sudo ambari-server start
+sudo ambari-server stop
+sudo ambari-server restart
+```
+
+Start/Stop/Restart Ambari agent:
+
+```sh
+sudo ambari-agent start
+sudo ambari-agent stop
+sudo ambari-agent restart
+```
+
+Logs to debug:
+
+```sh
+cat /var/log/ambari-agent/ambari-agent.log
+cat /var/log/ambari-server/ambari-server.log
+```
+
+```sh
+sudo ambari-agent start
+```
+
+### HDFS
+
+Switch user to hdfs:
+
+```sh
+sudo su hdfs
+```
+
+### Hive 
+
+Switch user to hive:
+
+```sh
+sudo su hive
+```
+
+### Spark 
+
+Switch user to spark:
+
+```sh
+sudo su spark
+```
+
+Launch spark-shell:
+
+```sh
+spark-shell
+```
+
+### Zookeeper
+
+Start/Stop/Status Zookeeper server:
+
+```sh
+zhServer.sh start 
+zhServer.sh stop
+zkServer.sh status
+```
+
+Connect to Zookeeper CLI:
+
+```sh
+zkCli.sh -server 
+```
 
