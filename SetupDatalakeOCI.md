@@ -1,14 +1,16 @@
 # Terraform
 
+In OCI menu, go to Developer Services > Resource Manager > Stacks and click "Create Stack":
 
+<img width="1451" alt="image" src="https://github.com/user-attachments/assets/9beb449a-2f7e-45d6-96d7-0555c28e263f">
 
 Check created instances in Compute > Instances:
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/cd96fd5b-9f21-412c-9148-fa49c9ea1d08">
 
-Allow an IP address to have full access to intances in order to access cluster resources:
+Allow an IP address to have full access to cluster in order to access resources:
 
-
+50070, 8088, 19888, 8080, 18082, 9090, 9091
 
 # Ambari
 
@@ -70,23 +72,33 @@ After setting up all services:
 
 HDFS:
 
+```
 MasterIP:50070
+```
 
 <img width="1090" alt="image" src="https://github.com/user-attachments/assets/83b93976-9e75-4582-9e62-42899d5748b9">
 
 YARN:
 
+```
 MasterIP:8088
+```
 
-<img width="1160" alt="image" src="https://github.com/user-attachments/assets/16dd9d29-ccc9-49a3-a941-596f0cf14de4">
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/16dd9d29-ccc9-49a3-a941-596f0cf14de4">
 
 MapReduce:
 
+```
 MasterIP:19888
+```
 
 <img width="1187" alt="image" src="https://github.com/user-attachments/assets/799ea02c-73e3-4350-be98-6ada62524a9a">
 
-Spark3:
+Spark3 History server:
+
+```
+MasterIP:18082
+```
 
 <img width="1005" alt="image" src="https://github.com/user-attachments/assets/f91a3dfe-73fb-4e04-92e4-30a112f75c1a">
 
@@ -143,6 +155,15 @@ Switch user to hive:
 sudo su hive
 ```
 
+Connect to Hive:
+
+```
+beeline -u "jdbc:hive2://master:10000/default" -n hive -p hive
+```
+
+<img width="483" alt="image" src="https://github.com/user-attachments/assets/5f08f489-96e7-46e7-b59c-caa304f5f293">
+
+
 ### Spark 
 
 Switch user to spark:
@@ -156,6 +177,9 @@ Launch spark-shell:
 ```sh
 spark-shell
 ```
+
+<img width="641" alt="image" src="https://github.com/user-attachments/assets/a74a03f1-144b-4e96-8fb8-bc8620fbf44b">
+
 
 ### Zookeeper
 
@@ -172,4 +196,9 @@ Connect to Zookeeper CLI:
 ```sh
 zkCli.sh -server 
 ```
+
+# Kafka
+
+kafka-console-producer.sh
+
 
