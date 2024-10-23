@@ -51,5 +51,10 @@ Inside an AD – High Scale, High Performance Network
 
 ## Stacks
 
+# Instances
+
+OCI Ampere A1 Compute instances (Arm processor): All tenancies get the first 3,000 OCPU hours and 18,000 GB hours per month for free for VM instances using the VM.Standard.A1.Flex shape, which has an Arm processor. 
+
+For Always Free tenancies, this is equivalent to 4 OCPUs and 24 GB of memory.
 
 
