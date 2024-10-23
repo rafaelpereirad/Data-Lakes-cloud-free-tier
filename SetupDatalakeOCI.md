@@ -3,11 +3,13 @@
 
 Access Public_IP_Master:8080
 
+<img width="548" alt="image" src="https://github.com/user-attachments/assets/fb63589a-5254-4400-b2d5-3a1d528eb138">
+
 Login as:
 
 ```
-user: admin
-password: admin
+Userame: admin
+Password: admin
 ```
 
 Click launch install Wizard:
@@ -45,4 +47,9 @@ ssh to instance and run script:
 ```
 ./hdfscorrections.sh
 ```
+
+
+After setting up all services:
+
+<img width="1400" alt="image" src="https://github.com/user-attachments/assets/048ebbcd-98b4-454a-9f33-392813753d69">
 
