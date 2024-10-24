@@ -1,7 +1,6 @@
 # Resources used in OCI
 
-![image](https://github.com/user-attachments/assets/4370fd2f-3c2b-4cd3-a3b2-148430add032)
-
+<img width="806" alt="image" src="https://github.com/user-attachments/assets/fe294b05-f1e5-4f0e-8553-3537d682a80e">
 
 ## OCI Region – HA Building Blocks 
 
