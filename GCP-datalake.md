@@ -66,3 +66,8 @@ Cloud Storage -> Cloud Storage is a managed service for storing unstructured dat
 
 BigQuery -> BigQuery's serverless architecture lets you use SQL queries to analyze your data. You can store and analyze your data within BigQuery or use BigQuery to assess your data where it lives. To test how it works for yourself, query data—without a credit card—using the BigQuery sandbox.
 
+BigQuery is a cloud-based big data analytics web service for processing very large data sets. BigQuery was designed for analyzing data on the order of billions of rows, using a SQLlike syntax.
+
+BigQuery, MapReduce and data ware house are fundamentally different technologies and each has different use cases:
+
+<img width="476" alt="image" src="https://github.com/user-attachments/assets/db876e6f-6661-4674-82ea-b0c9ded8a188">
