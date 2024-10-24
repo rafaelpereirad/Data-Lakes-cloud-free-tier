@@ -1,3 +1,9 @@
+# Generate ssh key pair
+
+```
+ssh-keygen -t rsa -b 2048
+```
+
 # Terraform
 
 In OCI menu, go to **Developer Services > Resource Manager > Stacks** and click "Create Stack":
@@ -32,11 +38,15 @@ Check created instances in **Compute > Instances**:
 
 <img width="1000" alt="image" src="https://github.com/user-attachments/assets/cd96fd5b-9f21-412c-9148-fa49c9ea1d08">
 
+To ssh to an instance:
+
+```
+ssh -i /path/to/private/key opc@InstanceeIP
+```
+
 # Ambari
 
-Access in the browser
-
-Public_IP_Master:8080
+Access in a browser: Public_IP_Master:8080
 
 <img width="548" alt="image" src="https://github.com/user-attachments/assets/fb63589a-5254-4400-b2d5-3a1d528eb138">
 
