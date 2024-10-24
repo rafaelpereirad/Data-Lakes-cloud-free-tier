@@ -4,7 +4,7 @@
 
 Cluster with Master/Worker Architecture:
 
-<img width="660" alt="image" src="https://github.com/user-attachments/assets/4357cad5-58eb-494e-bc92-57b1e2ad8f8f">
+<img width="806" alt="image" src="https://github.com/user-attachments/assets/4d9e06fe-4c4b-44b9-b13f-338349613eef">
 
 ## Stack
 
