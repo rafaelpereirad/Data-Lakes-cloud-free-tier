@@ -1,5 +1,7 @@
 # Generate ssh key pair
 
+Caso precise de authorized keys
+
 ```
 ssh-keygen -t rsa -b 2048
 ```
