@@ -64,6 +64,8 @@ Pros:
 
 Cloud Storage -> Cloud Storage is a managed service for storing unstructured data. Store any amount of data and retrieve it as often as you like.
 
+# BigQuery
+
 BigQuery -> BigQuery's serverless architecture lets you use SQL queries to analyze your data. You can store and analyze your data within BigQuery or use BigQuery to assess your data where it lives. To test how it works for yourself, query data—without a credit card—using the BigQuery sandbox.
 
 BigQuery is a cloud-based big data analytics web service for processing very large data sets. BigQuery was designed for analyzing data on the order of billions of rows, using a SQLlike syntax.
@@ -94,12 +96,11 @@ BigQuery is a fully managed, AI-ready data analytics platform that helps you max
 | Streaming Reads            | Use the storage Read API to perform streaming reads of table data.                            | Starting at $1.10 per TiB read                    |
 
 
-O Google BigQuery é um Data Warehouse totalmente gerenciado e altamente escalável que permite executar consultas SQL super rápidas em grandes conjuntos de dados, sem a necessidade de gerenciar a infraestrutura.
+O BigQuery é um data warehouse corporativo totalmente gerenciado que ajuda a gerenciar e analisar dados com recursos integrados, como aprendizado de máquina, análise geoespacial e business intelligence. A arquitetura sem servidor do BigQuery permite usar consultas SQL para responder às maiores questões de uma organização sem a necessidade de gerenciamento de infraestrutura. As consultas federadas permitem que você leia dados de fontes externas enquanto o streaming é compatível com atualizações contínuas de dados. O mecanismo de análise distribuída e escalonável do BigQuery permite consultar terabytes em segundos e petabytes em minutos.
 
-A arquitetura sem servidor (serverless) do BigQuery permite usar consultas SQL para responder às perguntas de negócio sem precisar gerenciar a infraestrutura (configurar servidor e sistema operacional, por exemplo). O mecanismo de análise distribuída e escalonável do BigQuery permite consultar terabytes em segundos e petabytes em minutos.
+A arquitetura do BigQuery consiste em duas partes: uma camada de armazenamento que ingere, armazena e otimiza dados e uma camada de computação que fornece recursos de análise. Essas camadas de computação e armazenamento operam com eficiência de maneira independente umas das outras, graças à rede em escala de petabits do Google, que permite a comunicação necessária entre elas.
 
-O BigQuery maximiza a flexibilidade separando o mecanismo de computação que analisa os dados das suas opções de armazenamento. Você pode armazenar e analisar seus dados no BigQuery ou usar o BigQuery para avaliar seus dados onde eles estão. As consultas federadas permitem que você leia dados de fontes externas enquanto o streaming é compatível com atualizações contínuas de dados.
-
+Os bancos de dados legados geralmente precisam compartilhar recursos para operações de leitura/gravação e analíticas. Isso pode resultar em conflitos de recursos e tornar as consultas mais lentas enquanto os dados são gravados ou lidos a partir do armazenamento. Os pools de recursos compartilhados podem ficar ainda mais sobrecarregados quando são necessários recursos para tarefas de gerenciamento de banco de dados, como atribuição ou revogação de permissões. Com a separação das camadas de computação e armazenamento do BigQuery, cada uma delas pode alocar recursos dinamicamente sem afetar o desempenho ou a disponibilidade da outra.
 https://www.oreilly.com/library/view/google-bigquery-the/9781492044451/ch01.html
 
 BigQuery, MapReduce and data ware house are fundamentally different technologies and each has different use cases:
@@ -119,4 +120,35 @@ This separation principle lets BigQuery innovate faster because storage and comp
 BigQuery interfaces include Google Cloud console interface and the BigQuery command-line tool. Developers and data scientists can use client libraries with familiar programming including Python, Java, JavaScript, and Go, as well as BigQuery's REST API and RPC API to transform and manage data. ODBC and JDBC drivers provide interaction with existing applications including third-party tools and utilities.
 
 As a data analyst, data engineer, data warehouse administrator, or data scientist, BigQuery helps you load, process, and analyze data to inform critical business decisions.
+
+# Pub/Sub
+
+O Pub/Sub é um serviço de mensagens assíncrono e escalonável que separa os serviços que produzem mensagens dos serviços que as processam.
+
+O Pub/Sub permite que os serviços se comuniquem de maneira assíncrona, com latências de 100 milissegundos.
+
+O Pub/Sub é usado para análises de streaming e pipelines de integração de dados para carregar e distribuir dados. É igualmente eficaz como um middleware voltado para mensagens para integração de serviços ou como uma fila para carregar tarefas em paralelo.
+
+O Pub/Sub permite criar sistemas de produtores e consumidores de eventos, chamados editores e inscritos. Os editores se comunicam com os assinantes de forma assíncrona transmitindo eventos, em vez de realizar chamadas de procedimento remoto (RPCs) síncronas.
+
+Os editores enviam eventos ao serviço Pub/Sub, sem considerar como ou quando esses eventos serão processados. Em seguida, o Pub/Sub envia eventos para todos os serviços que reagem a eles. Nos sistemas que se comunicam por RPCs, os editores precisam esperar os assinantes receberem os dados. No entanto, a integração assíncrona no Pub/Sub aumenta a flexibilidade e a robustez do sistema geral.
+
+# Cloud Run functions
+
+You bring the code, we handle the rest by making it simple to build and easy to maintain your platform.
+
+Cloud Functions is now Cloud Run functions. You can write and deploy functions with Cloud Run, giving you complete control over the underlying service configuration.
+
+https://cloud.google.com/functions#real-time-stream-processing
+
+Use cases (relevant):
+Real-time stream processing
+
+Use Cloud Run functions to respond to events from Pub/Sub to process, transform, and enrich streaming data in transaction processing, click-stream analysis, application activity tracking, IoT device telemetry, social media analysis, and other types of applications.
+
+<img width="564" alt="image" src="https://github.com/user-attachments/assets/b2c6adbc-819e-4967-8945-983a5958f5e3">
+
+Real-time file processing
+
+Execute your code in response to changes in data. Cloud Run functions can respond to events from Google Cloud services, such as Cloud Storage, Pub/Sub, and Cloud Firestore to process files immediately after upload and generate thumbnails from image uploads, process logs, validate content, transcode videos, validate, aggregate, and filter data in real time.
 
