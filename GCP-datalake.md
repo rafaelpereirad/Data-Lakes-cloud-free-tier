@@ -68,6 +68,40 @@ BigQuery -> BigQuery's serverless architecture lets you use SQL queries to analy
 
 BigQuery is a cloud-based big data analytics web service for processing very large data sets. BigQuery was designed for analyzing data on the order of billions of rows, using a SQLlike syntax.
 
+BigQuery is a fully managed, AI-ready data analytics platform that helps you maximize value from your data and is designed to be multi-engine, multi-format, and multi-cloud.
+
+<img width="617" alt="image" src="https://github.com/user-attachments/assets/f93b40a3-27cb-49f5-8479-9e99de263039">
+
+| Services and Usage         | Subscription Type                                                                             | Price (USD)                                       |
+|----------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
+| **Free Tier**              | The BigQuery free tier gives customers 10 GiB storage, up to 1 TiB queries free per month, and other resources. | **Free**                                          |
+| **Compute (Analysis)**     |                                                                                               |                                                   |
+| On-demand                  | Generally gives you access to up to 2,000 concurrent slots, shared among all queries in a single project. | Starting at $6.25 per TiB scanned. First 1 TiB per month is free. |
+| Standard Edition           | Low-cost option for standard SQL analysis                                                     | $0.04 per slot hour                               |
+| Enterprise Edition         | Supports advanced enterprise analytics                                                        | $0.06 per slot hour                               |
+| Enterprise Plus Edition    | Supports mission-critical enterprise analytics                                                | $0.10 per slot hour                               |
+| **Storage**                |                                                                                               |                                                   |
+| Active Local Storage       | Based on the uncompressed bytes used in tables or table partitions modified in the last 90 days. | Starting at $0.02 per GiB. The first 10 GiB is free each month. |
+| Long-term Logical Storage  | Based on the uncompressed bytes used in tables or table partitions modified for 90 consecutive days. | Starting at $0.01 per GiB. The first 10 GiB is free each month. |
+| Active Physical Storage    | Based on the compressed bytes used in tables or table partitions modified for 90 consecutive days. | Starting at $0.04 per GiB. The first 10 GiB is free each month. |
+| Long-term Physical Storage | Based on compressed bytes in tables or partitions that have not been modified for 90 consecutive days. | Starting at $0.02 per GiB. The first 10 GiB is free each month. |
+| **Data Ingestion**         |                                                                                               |                                                   |
+| Batch Loading              | Import table from Cloud Storage                                                               | Free (when using the shared slot pool)            |
+| Streaming Inserts          | Charged for rows that are successfully inserted. Individual rows are calculated using a 1 KB minimum. | $0.01 per 200 MiB                                 |
+| BigQuery Storage Write API | Data loaded into BigQuery is subject to BigQuery storage pricing or Cloud Storage pricing.    | $0.025 per 1 GiB. The first 2 TiB per month are free. |
+| **Data Extraction**        |                                                                                               |                                                   |
+| Batch Export               | Export table data to Cloud Storage                                                            | Free (when using the shared slot pool)            |
+| Streaming Reads            | Use the storage Read API to perform streaming reads of table data.                            | Starting at $1.10 per TiB read                    |
+
+
+O Google BigQuery é um Data Warehouse totalmente gerenciado e altamente escalável que permite executar consultas SQL super rápidas em grandes conjuntos de dados, sem a necessidade de gerenciar a infraestrutura.
+
+A arquitetura sem servidor (serverless) do BigQuery permite usar consultas SQL para responder às perguntas de negócio sem precisar gerenciar a infraestrutura (configurar servidor e sistema operacional, por exemplo). O mecanismo de análise distribuída e escalonável do BigQuery permite consultar terabytes em segundos e petabytes em minutos.
+
+O BigQuery maximiza a flexibilidade separando o mecanismo de computação que analisa os dados das suas opções de armazenamento. Você pode armazenar e analisar seus dados no BigQuery ou usar o BigQuery para avaliar seus dados onde eles estão. As consultas federadas permitem que você leia dados de fontes externas enquanto o streaming é compatível com atualizações contínuas de dados.
+
+https://www.oreilly.com/library/view/google-bigquery-the/9781492044451/ch01.html
+
 BigQuery, MapReduce and data ware house are fundamentally different technologies and each has different use cases:
 
 <img width="476" alt="image" src="https://github.com/user-attachments/assets/db876e6f-6661-4674-82ea-b0c9ded8a188">
