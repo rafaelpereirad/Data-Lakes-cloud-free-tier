@@ -1,3 +1,7 @@
+Google Cloud for Students:
+
+https://cloud.google.com/edu/students?hl=en
+
 To prevent getting billed for usage beyond the free courtesy usage limits, you can set requests per day caps:
 https://cloud.google.com/apis/docs/capping-api-usage
 
