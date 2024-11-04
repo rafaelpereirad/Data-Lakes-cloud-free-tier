@@ -70,13 +70,99 @@ Cloud Storage -> Cloud Storage is a managed service for storing unstructured dat
 
 # BigQuery
 
-BigQuery -> BigQuery's serverless architecture lets you use SQL queries to analyze your data. You can store and analyze your data within BigQuery or use BigQuery to assess your data where it lives. To test how it works for yourself, query data—without a credit card—using the BigQuery sandbox.
+O BigQuery é um data warehouse corporativo totalmente gerenciado que ajuda a gerenciar e analisar dados com recursos integrados, como aprendizado de máquina, análise geoespacial e business intelligence. 
 
-BigQuery is a cloud-based big data analytics web service for processing very large data sets. BigQuery was designed for analyzing data on the order of billions of rows, using a SQLlike syntax.
++ A arquitetura sem servidor do BigQuery permite usar consultas SQL para responder às maiores questões de uma organização sem a necessidade de gerenciamento de infraestrutura.
++ As consultas federadas permitem que você leia dados de fontes externas enquanto o streaming é compatível com atualizações contínuas de dados.
++ O mecanismo de análise distribuída e escalonável do BigQuery permite consultar terabytes em segundos e petabytes em minutos.
 
-BigQuery is a fully managed, AI-ready data analytics platform that helps you maximize value from your data and is designed to be multi-engine, multi-format, and multi-cloud.
+A arquitetura do BigQuery consiste em duas partes: uma camada de armazenamento que ingere, armazena e otimiza dados e uma camada de computação que fornece recursos de análise:
 
-<img width="617" alt="image" src="https://github.com/user-attachments/assets/f93b40a3-27cb-49f5-8479-9e99de263039">
+<img width="508" alt="image" src="https://github.com/user-attachments/assets/19ea8eb5-18cc-4e07-a529-fc007bf18b0c">
+
+### Dados da tabela
+
+A maioria dos dados armazenados no BigQuery são dados de tabelas. Os dados incluem tabelas padrão, clones de tabelas, instantâneos de tabelas e visualizações materializadas. Você é cobrado pelo armazenamento que usar com esses recursos. 
+
++ Quando você executa uma consulta, o mecanismo de consulta distribui o trabalho em paralelo para vários workers, que verificam as tabelas relevantes no armazenamento, processam a consulta e coletam os resultados.
++ O BigQuery executa consultas totalmente na memória, usando uma rede de petabits para garantir que os dados se movam com muita rapidez até os nós de trabalho.
++ Você é cobrado pelo armazenamento que usar com esses recursos
+  + As tabelas padrão contêm dados estruturados.
+    + Todas as tabelas têm um esquema, e cada coluna tem um tipo de dados.
+    + O BigQuery armazena dados em formato de colunas.
+  + Os clones de tabelas são cópias leves e graváveis de tabelas padrão.
+    + O BigQuery só armazena o delta entre um clone de tabela e a tabela base.
+  + Os snapshots de tabelas são cópias pontuais de tabelas.
+    + Os snapshots de tabelas são somente leitura, mas é possível restaurar uma tabela a partir de um snapshot de tabela.
+    + O BigQuery armazena somente o delta entre um snapshot de tabela e a tabela base.
+
+Além disso, os resultados da consulta armazenados em cache são mantidos como tabelas temporárias. Não há cobrança pelos resultados de consulta armazenados em cache armazenados em tabelas temporárias.
+
+As visualizações materializadas são visualizações pré-computadas que armazenam em cache os resultados da consulta da visualização periodicamente. Os resultados armazenados em cache são mantidos no armazenamento do BigQuery.
+
+### Metadados
+
+O armazenamento do BigQuery também contém metadados sobre os recursos do BigQuery. O armazenamento de metadados não é cobrado.
+
++ Quando você cria uma entidade permanente no BigQuery, como uma função de tabela, visualização ou definida pelo usuário (UDF, na sigla em inglês), o BigQuery armazena metadados sobre a entidade.
+  + Isso é válido mesmo para recursos que não contêm dados de tabelas, como UDFs e visualizações lógicas.
++ Os metadados incluem informações como esquema de tabela, especificações de particionamento e clustering, prazos de validade da tabela, entre outras.
+  + Esse tipo de metadados é visível para o usuário e pode ser configurado quando você cria o recurso.
+  + Além disso, o BigQuery armazena os metadados usados internamente para otimizar as consultas.
+  + Esses metadados não ficam diretamente visíveis aos usuários.
+
+### Layout do armazenamento
+
+O BigQuery armazena dados de tabelas em formato de colunas, isto é, ele armazena cada coluna separadamente.
++ Os bancos de dados orientados por coluna são especialmente eficientes na verificação de colunas individuais em um conjunto de dados inteiro.
++ Os bancos de dados orientados por coluna são otimizados para cargas de trabalho analíticas que agregam dados sobre um número muito grande de registros.
++ Muitas vezes, uma consulta analítica precisa apenas ler algumas colunas de uma tabela.
++ Por exemplo, se você quiser calcular a soma de uma coluna em milhões de linhas, o BigQuery pode ler os dados dessa coluna sem ler todos os campos de todas as linhas.
++ Outra vantagem dos bancos de dados orientados por coluna é que os dados em uma coluna geralmente têm mais redundância do que os dados em uma linha.
++ Essa característica permite uma maior compactação de dados usando técnicas como a codificação de tamanho de execução, que pode melhorar o desempenho da leitura.
+
+### Modelos de faturamento do Storage
+
+É possível receber cobranças pelo armazenamento de dados do BigQuery em bytes lógicos ou físicos (compactados) ou uma combinação de ambos.
+
+Você define o modelo de faturamento do armazenamento no nível do conjunto de dados. Se você não especificar um modelo de faturamento do armazenamento ao criar um conjunto de dados, o padrão será usar o faturamento do armazenamento lógico.
+
+## Otimizar o armazenamento
+
+A otimização do armazenamento do BigQuery melhora o desempenho das consultas e controla os custos. Para acessar os metadados de armazenamento de tabelas, consulte as seguintes visualizações INFORMATION_SCHEMA:
+
+INFORMATION_SCHEMA.TABLE_STORAGE
+INFORMATION_SCHEMA.TABLE_STORAGE_BY_ORGANIZATION
+
+## Carregar dados
+
+Padrões básicos de ingestão de dados no BigQuery.
+
++ Carregamento em lote: carregue os dados de origem em uma tabela do BigQuery em uma única operação em lote.
+  + Essa operação pode ser única ou pode ser automatizada para ocorrer de acordo com uma programação.
+  + Uma operação de carregamento em lote pode criar uma nova tabela ou anexar dados a uma tabela existente.
++ Streaming: faça streaming contínuo de lotes menores de dados, para que os dados fiquem disponíveis para consultas quase em tempo real.
++ Dados gerados: use instruções SQL para inserir linhas em uma tabela atual ou gravar os resultados de uma consulta em uma tabela.
+
+### Ler dados do armazenamento do BigQuery
+
+O BigQuery oferece várias maneiras de ler os dados da tabela:
+
++ API BigQuery: acesso síncrono paginado com o método tabledata.list.
+  + Os dados são lidos em série, uma página por invocação. 
++ API BigQuery Storage: acesso de alta capacidade de streaming que também oferece suporte à projeção e filtragem de colunas do lado do servidor.
+  + As leituras podem ser carregadas em paralelo por vários leitores se forem segmentadas em vários streams separados.
++ Exportar: cópia assíncrona de alta capacidade de processamento para o Google Cloud Storage, seja com jobs de extração ou EXPORT DATA.
+  + Se você precisar copiar dados no Cloud Storage, exporte-os com um job de extração ou uma instrução EXPORT DATA.
++ Cópia: cópia assíncrona de conjuntos de dados no BigQuery.
+  + A cópia é feita de maneira lógica quando os locais de origem e de destino são iguais.
+
+### Exclusão
+
+Quando você exclui uma tabela, os dados persistem por pelo menos a duração da janela de viagem no tempo. Depois disso, os dados são limpos do disco dentro da linha do tempo de exclusão do Google Cloud. Algumas operações de exclusão, como a instrução DROP COLUMN, são apenas operações de metadados. Nesse caso, o armazenamento será liberado na próxima vez que você modificar as linhas afetadas. Se você não modificar a tabela, não haverá um tempo garantido dentro do qual o armazenamento será liberado.
+
+Os bancos de dados legados geralmente precisam compartilhar recursos para operações de leitura/gravação e analíticas. Isso pode resultar em conflitos de recursos e tornar as consultas mais lentas enquanto os dados são gravados ou lidos a partir do armazenamento. Os pools de recursos compartilhados podem ficar ainda mais sobrecarregados quando são necessários recursos para tarefas de gerenciamento de banco de dados, como atribuição ou revogação de permissões. Com a separação das camadas de computação e armazenamento do BigQuery, cada uma delas pode alocar recursos dinamicamente sem afetar o desempenho ou a disponibilidade da outra.
+https://www.oreilly.com/library/view/google-bigquery-the/9781492044451/ch01.html
 
 | Services and Usage         | Subscription Type                                                                             | Price (USD)                                       |
 |----------------------------|------------------------------------------------------------------------------------------------|---------------------------------------------------|
@@ -99,31 +185,6 @@ BigQuery is a fully managed, AI-ready data analytics platform that helps you max
 | Batch Export               | Export table data to Cloud Storage                                                            | Free (when using the shared slot pool)            |
 | Streaming Reads            | Use the storage Read API to perform streaming reads of table data.                            | Starting at $1.10 per TiB read                    |
 
-
-O BigQuery é um data warehouse corporativo totalmente gerenciado que ajuda a gerenciar e analisar dados com recursos integrados, como aprendizado de máquina, análise geoespacial e business intelligence. A arquitetura sem servidor do BigQuery permite usar consultas SQL para responder às maiores questões de uma organização sem a necessidade de gerenciamento de infraestrutura. As consultas federadas permitem que você leia dados de fontes externas enquanto o streaming é compatível com atualizações contínuas de dados. O mecanismo de análise distribuída e escalonável do BigQuery permite consultar terabytes em segundos e petabytes em minutos.
-
-A arquitetura do BigQuery consiste em duas partes: uma camada de armazenamento que ingere, armazena e otimiza dados e uma camada de computação que fornece recursos de análise. Essas camadas de computação e armazenamento operam com eficiência de maneira independente umas das outras, graças à rede em escala de petabits do Google, que permite a comunicação necessária entre elas.
-
-Os bancos de dados legados geralmente precisam compartilhar recursos para operações de leitura/gravação e analíticas. Isso pode resultar em conflitos de recursos e tornar as consultas mais lentas enquanto os dados são gravados ou lidos a partir do armazenamento. Os pools de recursos compartilhados podem ficar ainda mais sobrecarregados quando são necessários recursos para tarefas de gerenciamento de banco de dados, como atribuição ou revogação de permissões. Com a separação das camadas de computação e armazenamento do BigQuery, cada uma delas pode alocar recursos dinamicamente sem afetar o desempenho ou a disponibilidade da outra.
-https://www.oreilly.com/library/view/google-bigquery-the/9781492044451/ch01.html
-
-BigQuery, MapReduce and data ware house are fundamentally different technologies and each has different use cases:
-
-<img width="476" alt="image" src="https://github.com/user-attachments/assets/db876e6f-6661-4674-82ea-b0c9ded8a188">
-
-BigQuery is a fully managed, AI-ready data platform that helps you manage and analyze your data with built-in features like machine learning, search, geospatial analysis, and business intelligence. BigQuery's serverless architecture lets you use languages like SQL and Python to answer your organization's biggest questions with zero infrastructure management.
-
-BigQuery provides a uniform way to work with both structured and unstructured data and supports open table formats like Apache Iceberg, Delta, and Hudi. BigQuery streaming supports continuous data ingestion and analysis while BigQuery's scalable, distributed analysis engine lets you query terabytes in seconds and petabytes in minutes.
-
-BigQuery's architecture consists of two parts: a storage layer that ingests, stores, and optimizes data and a compute layer that provides analytics capabilities. These compute and storage layers efficiently operate independently of each other thanks to Google's petabit-scale network that enables the necessary communication between them.
-
-Legacy databases usually have to share resources between read and write operations and analytical operations. This can result in resource conflicts and can slow queries while data is written to or read from storage. Shared resource pools can become further strained when resources are required for database management tasks such as assigning or revoking permissions. BigQuery's separation of compute and storage layers lets each layer dynamically allocate resources without impacting the performance or availability of the other.
-
-This separation principle lets BigQuery innovate faster because storage and compute improvements can be deployed independently, without downtime or negative impact on system performance. It is also essential to offering a fully managed serverless data warehouse in which the BigQuery engineering team handles updates and maintenance. The result is that you don't need to provision or manually scale resources, leaving you free to focus on delivering value instead of traditional database management tasks.
-
-BigQuery interfaces include Google Cloud console interface and the BigQuery command-line tool. Developers and data scientists can use client libraries with familiar programming including Python, Java, JavaScript, and Go, as well as BigQuery's REST API and RPC API to transform and manage data. ODBC and JDBC drivers provide interaction with existing applications including third-party tools and utilities.
-
-As a data analyst, data engineer, data warehouse administrator, or data scientist, BigQuery helps you load, process, and analyze data to inform critical business decisions.
 
 # Pub/Sub
 
@@ -156,3 +217,6 @@ Real-time file processing
 
 Execute your code in response to changes in data. Cloud Run functions can respond to events from Google Cloud services, such as Cloud Storage, Pub/Sub, and Cloud Firestore to process files immediately after upload and generate thumbnails from image uploads, process logs, validate content, transcode videos, validate, aggregate, and filter data in real time.
 
+# Integração entre os serviços 
+
+<img width="617" alt="image" src="https://github.com/user-attachments/assets/f93b40a3-27cb-49f5-8479-9e99de263039">
