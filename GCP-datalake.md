@@ -76,6 +76,8 @@ O BigQuery é um data warehouse corporativo totalmente gerenciado que ajuda a ge
 + As consultas federadas permitem que você leia dados de fontes externas enquanto o streaming é compatível com atualizações contínuas de dados.
 + O mecanismo de análise distribuída e escalonável do BigQuery permite consultar terabytes em segundos e petabytes em minutos.
 
+## Storage 
+
 A arquitetura do BigQuery consiste em duas partes: uma camada de armazenamento que ingere, armazena e otimiza dados e uma camada de computação que fornece recursos de análise:
 
 <img width="508" alt="image" src="https://github.com/user-attachments/assets/19ea8eb5-18cc-4e07-a529-fc007bf18b0c">
@@ -127,14 +129,14 @@ O BigQuery armazena dados de tabelas em formato de colunas, isto é, ele armazen
 
 Você define o modelo de faturamento do armazenamento no nível do conjunto de dados. Se você não especificar um modelo de faturamento do armazenamento ao criar um conjunto de dados, o padrão será usar o faturamento do armazenamento lógico.
 
-## Otimizar o armazenamento
+### Otimizar o armazenamento
 
 A otimização do armazenamento do BigQuery melhora o desempenho das consultas e controla os custos. Para acessar os metadados de armazenamento de tabelas, consulte as seguintes visualizações INFORMATION_SCHEMA:
 
 INFORMATION_SCHEMA.TABLE_STORAGE
 INFORMATION_SCHEMA.TABLE_STORAGE_BY_ORGANIZATION
 
-## Carregar dados
+### Carregar dados
 
 Padrões básicos de ingestão de dados no BigQuery.
 
