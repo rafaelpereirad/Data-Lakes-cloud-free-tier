@@ -1,5 +1,54 @@
 To prevent getting billed for usage beyond the free courtesy usage limits, you can set requests per day caps: https://cloud.google.com/apis/docs/capping-api-usage
 
+# Colossus
+
+https://cloud.google.com/blog/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system
+
+All of Google is layered with a common set of scalable services. There are three main building blocks used by each of our storage services:
+
++ Colossus is our cluster-level file system, successor to the Google File System (GFS).
++ Spanner is our globally-consistent, scalable relational database.
++ Borg is a scalable job scheduler that launches everything from compute to storage services. It was and continues to be a big influence on the design and development of Kubernetes.
+
+These three core building blocks are used to provide the underlying infrastructure for all Google Cloud storage services, from Firestore to Cloud SQL to Filestore, and Cloud Storage
+
+Borg provisions the needed resources, Spanner stores all the metadata about access permissions and data location, and then Colossus manages, stores, and provides access to all your data. 
+
+Colossus characteristics:
+
++ It’s the next-generation of the GFS.
++ Its design enhances storage scalability and improves availability to handle the massive growth in data needs of an ever-growing number of applications.
++ Colossus introduced a distributed metadata model that delivered a more scalable and highly available metadata subsystem.  
+
+Colossus control plane:
+
+<img width="619" alt="image" src="https://github.com/user-attachments/assets/9c42efe0-9aeb-4269-808c-2f9672b3b194">
+
++ Client library
+  + The client library is how an application or service interacts with Colossus.
+  + The client is probably the most complex part of the entire file system.
+  + There’s a lot of functionality, such as software RAID, that goes into the client based on an application’s requirements.
+  + Applications built on top of Colossus use a variety of encodings to fine-tune performance and cost trade-offs for different workloads.
++ Colossus Control Plane
+  + The foundation of Colossus is its scalable metadata service, which consists of many Curators.
+  + Clients talk directly to curators for control operations, such as file creation, and can scale horizontally.
++ Metadata database
+  + Curators store file system metadata in Google’s high-performance NoSQL database, BigTable.
+  + The original motivation for building Colossus was to solve scaling limits we experienced with Google File System (GFS) when trying to accommodate metadata related to Search.
+  + Storing file metadata in BigTable allowed Colossus to scale up by over 100x over the largest GFS clusters.
++ D File Servers
+  + Colossus also minimizes the number of hops for data on the network.
+  + Data flows directly between clients and “D” file servers (our network attached disks).
++ Custodians
+  + Colossus also includes background storage managers called Custodians.
+  + They play a key role in maintaining the durability and availability of data as well as overall efficiency, handling tasks like disk space balancing and RAID reconstruction. 
+
+<img width="642" alt="image" src="https://github.com/user-attachments/assets/09c78d3a-95b8-4a62-830b-1bde0b3e8505">
+
++ With Colossus, a single cluster is scalable to exabytes of storage and tens of thousands of machines.
++ In the example above, for example, we have instances accessing Cloud Storage from Compute Engine VMs, YouTube serving nodes, and Ads MapReduce nodes—all of which are able to share the same underlying file system to complete requests.
++ The key ingredient is having a shared storage pool that is managed by the Colossus control plane, providing the illusion that each has its own isolated file system. 
+
 # BigQuery
 
 O BigQuery é um data warehouse corporativo totalmente gerenciado que ajuda a gerenciar e analisar dados com recursos integrados, como aprendizado de máquina, análise geoespacial e business intelligence. 
@@ -119,6 +168,27 @@ https://www.oreilly.com/library/view/google-bigquery-the/9781492044451/ch01.html
 | Batch Export               | Export table data to Cloud Storage                                                            | Free (when using the shared slot pool)            |
 | Streaming Reads            | Use the storage Read API to perform streaming reads of table data.                            | Starting at $1.10 per TiB read                    |
 
+
+### BigQuery under the hood
+
+https://cloud.google.com/blog/products/bigquery/bigquery-under-the-hood
+
+BigQuery employs a vast set of multi-tenant services driven by low-level Google infrastructure technologies:
+
+<img width="396" alt="image" src="https://github.com/user-attachments/assets/bad3a60f-65f8-4f87-a986-faeaa87e0621">
+
++ Dremel: The Execution Engine
+  + Dremel turns SQL queries into execution trees. The leaves of the tree are called slots and do the heavy lifting of reading data from storage and any necessary computation. The branches of the tree are ‘mixers’, which perform the aggregation.
+  + Dremel dynamically apportions slots to queries on an as-needed basis, maintaining fairness for concurrent queries from multiple users. A single user can get thousands of slots to run their queries.
++ Colossus: Distributed Storage
+  + BigQuery leverages the columnar storage format and compression algorithm to store data in Colossus, optimized for reading large amounts of structured data.
+  + Colossus also handles replication, recovery (when disks crash) and distributed management (so there is no single point of failure). Colossus allows BigQuery users to scale to dozens of petabytes of data stored seamlessly, without paying the penalty of attaching much more expensive compute resources as in traditional data warehouses.
++ Jupiter: The Network
+  + In between storage and compute is ‘shuffle’, which takes advantage of Google’s Jupiter network to move data extremely rapidly from one place to another.
++ Borg: Compute
+  + The mixers and slots are all run by Borg, which allocates hardware resources.
+
+In the end, these low level infrastructure components are combined with several dozen high-level technologies, APIs, and services — like Bigtable, Spanner, and Stubby — to make one transparent and powerful analytics database — BigQuery.
 
 # Google Cloud for Students
 
