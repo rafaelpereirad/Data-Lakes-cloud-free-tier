@@ -20,6 +20,23 @@
 |----------|----------|----------|
 
 
+# Ingestão
+
+|  | Kafka | Pub/Sub |
+|----------|----------|----------|
+| Ordem das mensagens	| Em partições | Dentro de tópicos |
+| Gerenciamento de infraestrutura	 | Implementar e operar manualmente máquinas virtuais (VMs) ou máquinas. Mantenha versões e patches consistentes.	 | Gerenciado pelo Google |
+| Limite mensagens | Configurável | 10 MB |
+
+<img width="539" alt="image" src="https://github.com/user-attachments/assets/f76897b7-d07b-4603-8a46-194637d73e5a">
+
++ No diagrama anterior, cada M representa uma mensagem.
++ Os agentes do Kafka gerenciam várias partições ordenadas de mensagens, representadas pelas linhas horizontais de mensagens.
++ Os consumidores leem mensagens de uma partição específica que tem capacidade com base na máquina que hospeda essa partição.
++ O Pub/Sub não tem partições, e os consumidores leem de um tópico que realiza o escalonamento automático de acordo com a demanda.
++ Você configura cada tópico do Kafka com o número de partições necessárias para processar a carga de consumidor esperada.
++ O Pub/Sub é escalonado automaticamente com base na demanda.
+
 https://aws.amazon.com/pt/what-is/apache-hive/
 
 https://logz.io/blog/hive-vs-spark/
@@ -35,3 +52,5 @@ https://www.databricks.com/br/glossary/apache-hive
 https://spark.apache.org/
 
 https://blog.dsacademy.com.br/serie-spark-e-databricks-parte-1-arquitetura-e-componentes-do-apache-spark/
+
+https://cloud.google.com/pubsub/docs/migrating-from-kafka-to-pubsub?hl=pt-br
