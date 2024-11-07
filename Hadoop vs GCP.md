@@ -8,7 +8,7 @@
 | Tipo | Data Warehouse | Data Warehouse | Framework | 
 | Formato armazenamento |  | Colunar | 
 | Linguagem de Consulta | HiveQL | SQL | 
-| Arquitetura | | Uma camada de armazenamento que ingere, armazena e otimiza dados e uma camada de computação que fornece recursos de análise |
+| Arquitetura | Hive Server 2 (aceita solicitações de usuários e aplicativos e cria planos de execução), Hive Query Language (HQL), Apache Hive Metastore externo (armazena todos os metadados do Hive) e Hive Beeline Shell. | Uma camada de armazenamento que ingere, armazena e otimiza dados e uma camada de computação que fornece recursos de análise |
 
 https://aws.amazon.com/pt/what-is/apache-hive/
 
@@ -17,6 +17,8 @@ https://logz.io/blog/hive-vs-spark/
 https://cloud.google.com/bigquery?hl=pt
 
 https://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36632.pdf
+
+https://www.databricks.com/br/glossary/apache-hive
 
 |  | HDFS | GFS (Colossus) |
 |----------|----------|----------|
