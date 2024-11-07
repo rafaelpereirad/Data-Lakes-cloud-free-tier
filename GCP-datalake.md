@@ -259,9 +259,11 @@ Cloud Storage -> Cloud Storage is a managed service for storing unstructured dat
 
 # Pub/Sub
 
-O Pub/Sub é um serviço de mensagens assíncrono e escalonável que separa os serviços que produzem mensagens dos serviços que as processam.
+O Pub/Sub é um serviço de mensagens assíncronas, com latências de 100 milissegundos. O Pub/Sub dissocia serviços que produzem eventos de serviços que processam eventos. É possível usar o Pub/Sub como middleware orientado a mensagens ou ingestão e entrega de eventos para pipelines de análise de streaming. Em ambos os cenários, um aplicativo de editor cria e envia mensagens para um tópico. Para receber essas mensagens, os aplicativos do assinante criam uma assinatura de um tópico. Uma assinatura é uma entidade nomeada que representa um interesse em receber mensagens sobre um tópico específico.
 
-O Pub/Sub permite que os serviços se comuniquem de maneira assíncrona, com latências de 100 milissegundos.
+O Pub/Sub é executado em todas as regiões do Google Cloud. O Pub/Sub direciona o tráfego do editor para o data center do Google Cloud mais próximo em que é permitido o armazenamento de dados, conforme definido na política de restrição de local de recursos.
+
+O Pub/Sub pode se integrar a muitos serviços do Google Cloud comofluxo ,Armazenamento em nuvem ,Cloud Run para criar um anexo da VLAN de monitoramento. É possível configurar esses serviços para servirem como origens de dados que podem publicar mensagens no Pub/Sub ou como coletores de dados que podem receber mensagens do Pub/Sub.
 
 O Pub/Sub é usado para análises de streaming e pipelines de integração de dados para carregar e distribuir dados. É igualmente eficaz como um middleware voltado para mensagens para integração de serviços ou como uma fila para carregar tarefas em paralelo.
 
