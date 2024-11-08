@@ -6,11 +6,21 @@
 | Função | Sistema de data warehouse distribuído e tolerante a falhas que permite análises em grande escala. | Estrutura de análise de dados que pode realizar análises complexas em memória em grandes volumes de dados de até petabytes. | Plataforma de análise de dados totalmente gerenciada e pronta para IA que ajuda a impulsionar o valor dos dados, funcionando com vários mecanismos, formatos e nuvens. |
 | Tipo de processamento | Processamento em lote usando frameworks computacionais Apache Tez ou MapReduce. | Processamento na memória, reduzindo o número de etapas em uma tarefa e reutilizando dados em várias operações paralelas. | Processamento interativo e distribuído usando o serviço Dremel para consultas. |
 | Latência | Média a alta, dependendo da capacidade de resposta do mecanismo de computação. O modelo de execução distribuída oferece performance superior em comparação com sistemas de consulta monolíticos, como o RDBMS, para os mesmos volumes de dados.  | O Spark SQL é um mecanismo de consulta distribuído que fornece consultas interativas de baixa latência até 100 vezes mais rápidas que o MapReduce |  |
-| Tipos de dados | Oferece suporte a dados estruturados e não estruturados. Fornece suporte nativo para tipos de dados SQL comuns, como INT, FLOAT e VARCHAR.  | 
+| Tipos de dados | Oferece suporte a dados estruturados e não estruturados. Fornece suporte nativo para tipos de dados SQL comuns, como INT, FLOAT e VARCHAR.  |  | Dados estruturados. As tabelas de objetos permitem analisar dados não estruturados no Cloud Storage. É possível fazer análises com funções remotas ou inferência usando o BigQuery ML e, em seguida, mesclar os resultados dessas operações com o restante dos seus dados estruturados no BigQuery.  * |
 | Tipo | Data Warehouse | Framework para Análise de dados | Data Warehouse |
 | Formato armazenamento | CSV, TSV, Sequencial, RCFile, Avro, ORC e Parquet | CSV, JSON, ORC, e Parquet | Colunar |
 | Linguagem de Consulta | HiveQL | SQL, Java, Scala, Python e R | SQL |
 | Arquitetura | Hive Server 2 (aceita solicitações de usuários e aplicativos e cria planos de execução), Hive Query Language (HQL), Apache Hive Metastore externo (armazena todos os metadados do Hive) e Hive Beeline Shell. | Driver Process (mantem as informações sobre o aplicativo Spark, responde à consulta do usuário e agenda e distribui tarefas aos executores), Cluster Manager e Executors (armazenamento dos dados e execução do código nos dados distribuídos) | Uma camada de armazenamento que ingere, armazena e otimiza dados e uma camada de computação que fornece recursos de análise |
+
+*Guia de tradução de SQL do Apache Hive: 
+O Apache Hive e o BigQuery têm sistemas de tipos de dados diferentes. Na maioria dos casos, é possível mapear tipos de dados no Hive para tipos de dados do BigQuery com algumas exceções, como MAP e UNION. O Hive é compatível com mais transmissões implícitas do que o BigQuery. Como resultado, o tradutor de SQL em lote insere muitas transmissões explícitas
+
+https://cloud.google.com/bigquery/docs/migration/hive-sql?hl=pt-br
+
+https://www.geoambiente.com.br/blog/bigquery-conheca-as-novas-capacidades-de-analise-de-dados-nao-estruturados-e-de-streaming-no-google-cloud/#:~:text=Como%20reflexo%2C%20o%20BigQuery%20foi,dados%20s%C3%A3o%20considerados%20n%C3%A3o%20estruturados.
+
+Introdução a fontes de dados externas:
+https://cloud.google.com/bigquery/docs/external-data-sources?hl=pt-br
 
 |  | YARN e Mapreduce | Dremel |
 |----------|----------|----------|
@@ -18,6 +28,7 @@
 |  | MapReduce is a software framework for easily writing applications which process vast amounts of data (multi-terabyte data-sets) in-parallel on large clusters | Executes queries natively without translating them into MR jobs | 
 |  |  | Storage and reduce CPU cost due to cheaper compression | 
 |  |  | Inspired Apache Drill (open source) | 
+|  |  | Dremel provides fault tolerant execution, a flexible data model, and in situ data processing capabilities. |
 
 https://siliconangle.com/2012/08/20/googles-dremel-here-comes-a-new-challenger-to-yarnhadoop/
 
