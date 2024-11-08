@@ -25,7 +25,7 @@
 |  | Kafka | Pub/Sub |
 |----------|----------|----------|
 | Ordem das mensagens	| Em partições | Dentro de tópicos |
-| Gerenciamento de infraestrutura	 | Implementar e operar manualmente máquinas virtuais (VMs) ou máquinas. Mantenha versões e patches consistentes.	 | Gerenciado pelo Google |
+| Gerenciamento de infraestrutura	 | Implementar e operar manualmente máquinas virtuais (VMs). Mantenha versões e patches consistentes.	 | Gerenciado pelo Google |
 | Limite mensagens | Configurável | 10 MB |
 
 <img width="539" alt="image" src="https://github.com/user-attachments/assets/f76897b7-d07b-4603-8a46-194637d73e5a">
