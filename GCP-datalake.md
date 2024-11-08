@@ -197,7 +197,8 @@ https://cloud.google.com/edu/students?hl=en
 Create BigLake external tables for Cloud Storage:
 https://cloud.google.com/bigquery/docs/create-cloud-storage-table-biglake#console
 
-Cloud Storage
+# Cloud Storage
+
 free-tier:
 - 5 GB-months of regional storage (US regions only) per month
 - 5,000 Class A Operations per month
