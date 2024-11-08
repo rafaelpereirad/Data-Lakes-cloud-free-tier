@@ -1,6 +1,6 @@
 To prevent getting billed for usage beyond the free courtesy usage limits, you can set requests per day caps: https://cloud.google.com/apis/docs/capping-api-usage
 
-# Colossus
+# Colossus (Google File System)
 
 https://cloud.google.com/blog/products/storage-data-transfer/a-peek-behind-colossus-googles-file-system
 
