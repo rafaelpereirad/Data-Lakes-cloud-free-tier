@@ -1,3 +1,8 @@
+OCI:
+<img width="762" alt="image" src="https://github.com/user-attachments/assets/950c9b74-0991-4cd5-b9fb-ee2cd67f07b2">
+
+GCP:
+<img width="658" alt="image" src="https://github.com/user-attachments/assets/2227ef1d-8c5c-43a5-954b-8d78704ea5d4">
 
 # Processamento
 
