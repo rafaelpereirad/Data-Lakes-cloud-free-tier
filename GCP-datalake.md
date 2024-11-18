@@ -199,6 +199,8 @@ https://cloud.google.com/bigquery/docs/create-cloud-storage-table-biglake#consol
 
 # Cloud Storage
 
+Free Tier is only available in us-east1, us-west1, and us-central1 regions.
+
 free-tier:
 - 5 GB-months of regional storage (US regions only) per month
 - 5,000 Class A Operations per month
