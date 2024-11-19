@@ -190,6 +190,10 @@ BigQuery employs a vast set of multi-tenant services driven by low-level Google 
 
 In the end, these low level infrastructure components are combined with several dozen high-level technologies, APIs, and services — like Bigtable, Spanner, and Stubby — to make one transparent and powerful analytics database — BigQuery.
 
+### Price
+
+<img width="665" alt="image" src="https://github.com/user-attachments/assets/68378d75-71c4-4157-a591-57e0cc64d8aa">
+
 # Google Cloud for Students
 
 https://cloud.google.com/edu/students?hl=en
