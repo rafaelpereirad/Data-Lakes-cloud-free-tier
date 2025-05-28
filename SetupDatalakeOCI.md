@@ -20,6 +20,8 @@ Paste the public key in order to be able to access the machines through ssh, cho
 
 <img width="855" alt="image" src="https://github.com/user-attachments/assets/c4b14a31-e824-422b-bd98-f56d97d29ca8">
 
+Public IP pode ser obtido em: https://whatismyipaddress.com/pt/meu-ip (necessário para ter acesso ao ambiente)
+
 Click "Create":
 
 <img width="875" alt="image" src="https://github.com/user-attachments/assets/ea613f6e-9961-403e-a366-5ec9115c5ef0">
