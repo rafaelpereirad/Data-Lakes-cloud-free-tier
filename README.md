@@ -4,11 +4,11 @@
 
 ### Cluster
 
-<img width="758" alt="image" src="https://github.com/user-attachments/assets/9acbf88f-3e63-412e-9653-6d5d5a53f464">
+<p align="center"> <img width="758" alt="image" src="https://github.com/user-attachments/assets/9acbf88f-3e63-412e-9653-6d5d5a53f464">
 
 ### Stack
 
-<img width="660" alt="image" src="https://github.com/user-attachments/assets/84f3269b-2cfa-44a8-b739-eeb838d002e7">
+<p align="center"> <img width="660" alt="image" src="https://github.com/user-attachments/assets/84f3269b-2cfa-44a8-b739-eeb838d002e7">
 
 Descrição das Ferramentas de Código Aberto:
 
@@ -30,7 +30,7 @@ Descrição das Ferramentas de Código Aberto:
 
 ## Google Cloud Platform (GCP)
 
-<img width="605" height="277" alt="image" src="https://github.com/user-attachments/assets/998d2d40-12fc-48f7-8b93-42a9cd00cc03" />
+<p align="center"> <img width="605" height="277" alt="image" src="https://github.com/user-attachments/assets/998d2d40-12fc-48f7-8b93-42a9cd00cc03" />
 
 Descrição das ferramentas da nuvem da Google:
 
@@ -53,7 +53,7 @@ Descrição das ferramentas da nuvem da Google:
 
 watsonx.data:
 
-<img width="689" height="320" alt="image" src="https://github.com/user-attachments/assets/0eb46da5-e009-4bf3-8477-621465b67291" />
+<p align="center"> <img width="689" height="320" alt="image" src="https://github.com/user-attachments/assets/0eb46da5-e009-4bf3-8477-621465b67291" />
 
 - O IBM watsonx.data é um data lakehouse híbrido e aberto, construído para escalar cargas de trabalho de IA e análises com todos os seus dados, onde quer que eles estejam
   - Seu free tier oferece 2.000 unidades de recursos para testar o serviço, o que pode ser usado em até 30 dias
