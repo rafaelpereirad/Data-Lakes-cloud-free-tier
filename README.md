@@ -1,10 +1,10 @@
 # Implantação e Avaliação de Data Lakes em Free Tier Clouds
 
-## OCI 
+## Oracle Cloud Infrastructure (OCI) 
 
 ### Cluster
 
-<img width="798" alt="image" src="https://github.com/user-attachments/assets/9acbf88f-3e63-412e-9653-6d5d5a53f464">
+<img width="758" alt="image" src="https://github.com/user-attachments/assets/9acbf88f-3e63-412e-9653-6d5d5a53f464">
 
 ### Stack
 
@@ -28,9 +28,9 @@ Descrição das Ferramentas de Código Aberto:
 
 - "Apache Spark™ é um motor de múltiplas linguagens para executar engenharia de dados, ciência de dados e aprendizado de máquina em máquinas de nó único ou em clusters."
 
-## GCP
+## Google Cloud Platform (GCP)
 
-<img width="755" height="277" alt="image" src="https://github.com/user-attachments/assets/998d2d40-12fc-48f7-8b93-42a9cd00cc03" />
+<img width="605" height="277" alt="image" src="https://github.com/user-attachments/assets/998d2d40-12fc-48f7-8b93-42a9cd00cc03" />
 
 Descrição das ferramentas da nuvem da Google:
 
