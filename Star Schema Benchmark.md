@@ -158,7 +158,7 @@ Resultados:
 
 <p align="center"><img width="471" height="352" alt="image" src="https://github.com/user-attachments/assets/5a0bb92c-e715-4e8d-9981-8e72054de230" />
 
-Gráfico comparativo:
+Gráficos comparativos:
 
 <p align="center"><img width="516" height="433" alt="image" src="https://github.com/user-attachments/assets/ac7966da-14df-45d5-97d6-18caeebf40d2" />
 
