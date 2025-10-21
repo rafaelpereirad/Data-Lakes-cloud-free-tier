@@ -56,4 +56,4 @@ watsonx.data:
 <p align="center"> <img width="689" height="320" alt="image" src="https://github.com/user-attachments/assets/0eb46da5-e009-4bf3-8477-621465b67291" />
 
 - O IBM watsonx.data é um data lakehouse híbrido e aberto, construído para escalar cargas de trabalho de IA e análises com todos os seus dados, onde quer que eles estejam
-  - Seu free tier oferece 2.000 unidades de recursos para testar o serviço, o que pode ser usado em até 30 dias
+  - Free tier oferece 2.000 unidades de recursos para testar o serviço, o que pode ser usado em até 30 dias
