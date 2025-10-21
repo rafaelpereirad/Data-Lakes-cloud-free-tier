@@ -1,8 +1,8 @@
-OCI:
-<img width="762" alt="image" src="https://github.com/user-attachments/assets/950c9b74-0991-4cd5-b9fb-ee2cd67f07b2">
+### OCI
+<p align="center"> <img width="662" alt="image" src="https://github.com/user-attachments/assets/950c9b74-0991-4cd5-b9fb-ee2cd67f07b2">
 
-GCP:
-<img width="658" alt="image" src="https://github.com/user-attachments/assets/2227ef1d-8c5c-43a5-954b-8d78704ea5d4">
+### GCP  
+<p align="center"> <img width="637" height="284" alt="image" src="https://github.com/user-attachments/assets/9d6b944e-9bce-4646-951e-0bdb51ae0d99" />
 
 # Processamento
 
@@ -27,13 +27,13 @@ https://www.geoambiente.com.br/blog/bigquery-conheca-as-novas-capacidades-de-ana
 Introdução a fontes de dados externas:
 https://cloud.google.com/bigquery/docs/external-data-sources?hl=pt-br
 
-|  | YARN e Mapreduce | Dremel |
-|----------|----------|----------|
-|  |  YARN is to split up the functionalities of resource management and job scheduling/monitoring into separate daemons. | High-level, SQL-like language to express ad hoc queries | 
-|  | MapReduce is a software framework for easily writing applications which process vast amounts of data (multi-terabyte data-sets) in-parallel on large clusters | Executes queries natively without translating them into MR jobs | 
-|  |  | Storage and reduce CPU cost due to cheaper compression | 
-|  |  | Inspired Apache Drill (open source) | 
-|  |  | Dremel provides fault tolerant execution, a flexible data model, and in situ data processing capabilities. |
+ | YARN e Mapreduce                                                                                                                                                             | Dremel                                                                                                                                      |
+ | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------ |
+| A função do YARN é dividir as funcionalidades de gerenciamento de recursos e de agendamento/monitoramento de tarefas em daemons separados.                                     | Linguagem de alto nível, semelhante a SQL, para expressar consultas ad hoc.                                                                 |
+ | O MapReduce é um framework de software para escrever facilmente aplicações que processam grandes volumes de dados (conjuntos de dados de múltiplos terabytes) em paralelo em grandes clusters. | Executa consultas nativamente, sem traduzi-las para tarefas de MapReduce (MR jobs).                                                         |
+ |                                                                                                                                                                              | Economia de armazenamento e redução do custo de CPU devido a uma compressão mais eficiente.                                                 |
+ |                                                                                                                                                                              | Inspirou o Apache Drill (código aberto).                                                                                                    |
+ |                                                                                                                                                                              | O Dremel oferece execução tolerante a falhas, um modelo de dados flexível e capacidades de processamento de dados *in situ* (no local).     |
 
 https://siliconangle.com/2012/08/20/googles-dremel-here-comes-a-new-challenger-to-yarnhadoop/
 
@@ -41,25 +41,24 @@ https://hadoop.apache.org/docs/current/hadoop-mapreduce-client/hadoop-mapreduce-
 
 # Armazenamento 
 
-|  | HDFS | Colossus (sucessor to GFS) |
-|----------|----------|----------|
-| Implementation | In the other part, HDFS based on Apache Hadoop open-source project can be deployed and used by any company willing to manage and process big data. | Since GFS is proprietary file system and exclusive to Google only, it can not be used by any other company. |
-| File serving | In Hadoop, HDFS file system divides the files into units called blocks of 128 MB in size. Block size can be adjustable based on the size of data. | In GFS, files are divided into units called chunks of fixed size. Chunk size is 64 MB and can be stored on different nodes in cluster for load balancing and performance needs. |
-| Cache management | The HDFS has “DistributedCache”. DistributedCache is facility provided by the MapReduce to distribute application-specific, large, read-only files efficiently. It also caches files such as text, archives (zip, tar, tgz and tar.gz) and jars needed by applications. DistributedCache files can be private or public, that determines how they can be shared on the slave nodes. |  In GFS, cache metadata are saved in client memory. Chunk server does not need cache file data. Linux system running on the chunk server caches frequently accessed data in memory |
-| Files protection and permission | The HDFS implements POSIX-like mode permission for files and directories. All files and directories are associated with an owner and a group with separate permissions for users who are owners, for users that are members of the group and for all other users. | Suitebriar-Google partner-mentions in its security analysis research that GFS splits files up and stores it in multiple pieces on multiple machines. File names have random names and are not human readable. Files are obfuscated through algorithms that change constantly. |
-| Replication strategy | The HDFS has an automatic replication rack based system. By default two copies of each block are stored by different DataNodes in the same rack and a third  opy is stored on a DataNode on a different rack. | The GFS has two replicas: Primary replicas and secondary replicas. A primary replica is the data chunk that a chunk server sends to a client. Secondary replicas serve as backups on other chunk servers. User can specify the number of replicas to be maintained. |
-| File namespace | The HDFS supports a traditional hierarchical file organization. Users or application can create directories to store files inside. The HDFS also supports third-party file systems such as CloudStore and Amazon Simple Storage Service (S3) | In GFS, files are organized hierarchically in directories and identified by path names. The GFS is exclusively for Google only |
-| Filesystem database | Based on "Bigtable" study white papers, Apache developed its own database called HBase in Hadoop open-source project. The HBase is built with Java language. The major common features between bigtable and HBase. | The GFS has bigtable database. Bigtable is a proprietary database developed by Google using c++. |
+| Característica                        | HDFS (Hadoop Distributed File System)                                                                                                                                                                                                                                                                                                  | GFS (Google File System)                                                                                                                                                                                                                                                                                                                           |
+| :------------------------------------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Implementação** | Já o HDFS, baseado no projeto de código aberto Apache Hadoop, pode ser implantado e utilizado por qualquer empresa que deseje gerenciar e processar big data.                                                                                                                                                                            | Como o GFS é um sistema de arquivos proprietário e exclusivo do Google, ele не pode ser utilizado por nenhuma outra empresa.                                                                                                                                                                                                                       |
+| **Serviço de Arquivos** | No Hadoop, o sistema de arquivos HDFS divide os arquivos em unidades chamadas blocos, com 128 MB de tamanho. O tamanho do bloco pode ser ajustado com base no tamanho dos dados.                                                                                                                                                             | No GFS, os arquivos são divididos em unidades de tamanho fixo chamadas *chunks*. O tamanho do *chunk* é de 64 MB e eles podem ser armazenados em diferentes nós no cluster para necessidades de balanceamento de carga e desempenho.                                                                                                                  |
+| **Gerenciamento de Cache** | O HDFS possui o “DistributedCache”. O DistributedCache é um recurso fornecido pelo MapReduce para distribuir eficientemente arquivos grandes, somente leitura e específicos da aplicação. Ele também armazena em cache arquivos como texto, arquivos compactados (zip, tar, tgz e tar.gz) e jars necessários pelas aplicações. Os arquivos do DistributedCache podem ser privados ou públicos, o que determina como podem ser compartilhados nos nós escravos (*slave nodes*). | No GFS, os metadados de cache são salvos na memória do cliente. O servidor de *chunks* (*chunk server*) não precisa armazenar dados de arquivos em cache. O sistema Linux em execução no servidor de *chunks* armazena em cache na memória os dados acessados com frequência.                                                                               |
+| **Proteção e Permissão de Arquivos** | O HDFS implementa um modo de permissão do tipo POSIX para arquivos e diretórios. Todos os arquivos e diretórios são associados a um proprietário e a um grupo, com permissões separadas para usuários que são proprietários, para usuários que são membros do grupo e para todos os outros usuários.                                                        | A Suitebriar - parceira do Google - menciona em sua pesquisa de análise de segurança que o GFS divide os arquivos e os armazena em várias partes em várias máquinas. Os nomes dos arquivos são aleatórios e não são legíveis por humanos. Os arquivos são ofuscados por meio de algoritmos que mudam constantemente.                                        |
+| **Estratégia de Replicação** | O HDFS possui um sistema automático de replicação baseado em rack. Por padrão, duas cópias de cada bloco são armazenadas por DataNodes diferentes no mesmo rack, e uma terceira cópia é armazenada em um DataNode em um rack diferente.                                                                                                      | O GFS possui dois tipos de réplicas: réplicas primárias e réplicas secundárias. Uma réplica primária é o *chunk* de dados que um servidor de *chunks* envia a um cliente. As réplicas secundárias servem como backups em outros servidores de *chunks*. O usuário pode especificar o número de réplicas a serem mantidas.                                    |
+| **Namespace de Arquivos** | O HDFS suporta uma organização de arquivos hierárquica tradicional. Usuários ou aplicações podem criar diretórios para armazenar arquivos. O HDFS também suporta sistemas de arquivos de terceiros, como CloudStore e Amazon Simple Storage Service (S3).                                                                                           | No GFS, os arquivos são organizados hierarquicamente em diretórios e identificados por nomes de caminho (*path names*). O GFS é exclusivo do Google.                                                                                                                                                                                                  |
+| **Banco de Dados do Sistema de Arquivos** | Com base nos *white papers* de estudo do "Bigtable", a Apache desenvolveu seu próprio banco de dados chamado HBase no projeto de código aberto Hadoop. O HBase é construído com a linguagem Java. Existem grandes características em comum entre o Bigtable e o HBase.                                                                                   | O GFS possui o banco de dados Bigtable. O Bigtable é um banco de dados proprietário desenvolvido pelo Google usando C++.                                                                                                                                                                                                                                |
 
 
-Scalability: Both HDFS and GFS are considered as cluster based architecture. Each file system runs over machines built from commodity hardware. Each cluster may consist of thousands of nodes with huge data size storage.
+Escalabilidade: Tanto o HDFS quanto o GFS são considerados arquiteturas baseadas em cluster. Cada sistema de arquivos é executado sobre máquinas construídas com hardware comum (commodity hardware). Cada cluster pode consistir em milhares de nós com armazenamento para grandes volumes de dados.
 
+Embora o GFS tenha sido inovador por si só, ele tinha limitações em termos de escalabilidade. Para resolver esses problemas, o Google desenvolveu o Colossus como uma versão aprimorada do GFS. O Colossus fornece armazenamento para vários produtos do Google e serve como a plataforma de armazenamento subjacente para os serviços do Google Cloud, tornando-o publicamente disponível. Com escalabilidade e disponibilidade aprimoradas, o Colossus é projetado para lidar com as demandas de dados em rápido crescimento das aplicações modernas.
 
-While GFS was groundbreaking in its own right, it had limitations in terms of scalability. To address these issues, Google developed Colossus as an improved version of GFS. Colossus provides storage for various Google products and serves as the underlying storage platform for Google Cloud services, making it publicly available. With enhanced scalability and availability, Colossus is designed to handle modern applications' rapidly growing data demands.
+Google File System:
 
-Google File System architecture:
-
-<img width="568" alt="image" src="https://github.com/user-attachments/assets/c416dce0-15cf-4887-8091-1543b75354f3">
+<p align="center"> <img width="568" alt="image" src="https://github.com/user-attachments/assets/c416dce0-15cf-4887-8091-1543b75354f3">
 
 https://www.infoq.com/articles/dfs-architecture-comparison/
 Research Article: Analyzing Google File System and Hadoop Distributed File System, Nader Gemayel
@@ -69,10 +68,10 @@ Research Article: Analyzing Google File System and Hadoop Distributed File Syste
 |  | Kafka | Pub/Sub |
 |----------|----------|----------|
 | Ordem das mensagens	| Em partições | Dentro de tópicos |
-| Gerenciamento de infraestrutura	 | Implementar e operar manualmente máquinas virtuais (VMs). Mantenha versões e patches consistentes.	 | Gerenciado pelo Google |
+| Gerenciamento de infraestrutura	 | Implementar e operar manualmente máquinas virtuais (VMs). Mantenha versões e patches consistentes.	 | Gerenciado pelo Google. |
 | Limite mensagens | Configurável | 10 MB |
 
-<img width="539" alt="image" src="https://github.com/user-attachments/assets/f76897b7-d07b-4603-8a46-194637d73e5a">
+<p align="center"> <img width="539" alt="image" src="https://github.com/user-attachments/assets/f76897b7-d07b-4603-8a46-194637d73e5a">
 
 + No diagrama anterior, cada M representa uma mensagem.
 + Os agentes do Kafka gerenciam várias partições ordenadas de mensagens, representadas pelas linhas horizontais de mensagens.
