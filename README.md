@@ -12,21 +12,21 @@
 
 Descrição das Ferramentas de Código Aberto:
 
-- "A biblioteca de software Apache Hadoop é um framework que permite o processamento distribuído de grandes conjuntos de dados através de clusters de computadores, usando modelos de programação simples. Ele é projetado para escalar de servidores únicos a milhares de máquinas, cada uma oferecendo computação e armazenamento local."
+- A biblioteca de software Apache Hadoop é um framework que permite o processamento distribuído de grandes conjuntos de dados através de clusters de computadores, usando modelos de programação simples. Ele é projetado para escalar de servidores únicos a milhares de máquinas, cada uma oferecendo computação e armazenamento local.
 
-- "O Hadoop Distributed File System (HDFS) é um sistema de arquivos distribuído projetado para rodar em hardware comum (commodity hardware). O HDFS é altamente tolerante a falhas e foi projetado para ser implantado em hardware de baixo custo. O HDFS fornece acesso de alta taxa de transferência aos dados de aplicativos e é adequado para aplicações que possuem grandes conjuntos de dados."
+- O Hadoop Distributed File System (HDFS) é um sistema de arquivos distribuído projetado para rodar em hardware comum (commodity hardware). O HDFS é altamente tolerante a falhas e foi projetado para ser implantado em hardware de baixo custo. O HDFS fornece acesso de alta taxa de transferência aos dados de aplicativos e é adequado para aplicações que possuem grandes conjuntos de dados.
 
-- "O projeto Apache Ambari tem como objetivo simplificar o gerenciamento do Hadoop, desenvolvendo software para provisionar, gerenciar e monitorar clusters Apache Hadoop. O Ambari oferece uma interface de usuário web intuitiva e fácil de usar para o gerenciamento do Hadoop, suportada por suas APIs RESTful."
+- O projeto Apache Ambari tem como objetivo simplificar o gerenciamento do Hadoop, desenvolvendo software para provisionar, gerenciar e monitorar clusters Apache Hadoop. O Ambari oferece uma interface de usuário web intuitiva e fácil de usar para o gerenciamento do Hadoop, suportada por suas APIs RESTful.
 
-- "Nifi é um sistema fácil de usar, poderoso e confiável para processar e distribuir dados."
+- Nifi é um sistema fácil de usar, poderoso e confiável para processar e distribuir dados.
 
-- "Apache Kafka é uma plataforma de streaming de eventos distribuída e de código aberto, usada por milhares de empresas para pipelines de dados de alto desempenho, análise de streaming, integração de dados e aplicações de missão crítica."
+- Apache Kafka é uma plataforma de streaming de eventos distribuída e de código aberto, usada por milhares de empresas para pipelines de dados de alto desempenho, análise de streaming, integração de dados e aplicações de missão crítica.
 
-- "ZooKeeper é um serviço centralizado para manter informações de configuração, nomeação, fornecer sincronização distribuída e oferecer serviços de grupo. Todos esses tipos de serviços são usados de alguma forma por aplicações distribuídas."
+- ZooKeeper é um serviço centralizado para manter informações de configuração, nomeação, fornecer sincronização distribuída e oferecer serviços de grupo. Todos esses tipos de serviços são usados de alguma forma por aplicações distribuídas.
 
-- "Apache Hive é um sistema de data warehouse distribuído e tolerante a falhas que permite análises em escala massiva. O Hive Metastore (HMS) fornece um repositório central de metadados que podem ser facilmente analisados para tomar decisões informadas e baseadas em dados, e, portanto, é um componente crítico de muitas arquiteturas de data lake."
+- Apache Hive é um sistema de data warehouse distribuído e tolerante a falhas que permite análises em escala massiva. O Hive Metastore (HMS) fornece um repositório central de metadados que podem ser facilmente analisados para tomar decisões informadas e baseadas em dados, e, portanto, é um componente crítico de muitas arquiteturas de data lake.
 
-- "Apache Spark™ é um motor de múltiplas linguagens para executar engenharia de dados, ciência de dados e aprendizado de máquina em máquinas de nó único ou em clusters."
+- Apache Spark™ é um motor de múltiplas linguagens para executar engenharia de dados, ciência de dados e aprendizado de máquina em máquinas de nó único ou em clusters.
 
 ## Google Cloud Platform (GCP)
 
