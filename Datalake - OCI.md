@@ -1,13 +1,16 @@
-# Download files 
+# Downloads 
 
 Terraform:
 
 ```
 https://github.com/rafaelpereirad/Data-Lakes-cloud-free-tier/blob/main/oci-datalake-free-tier.zip
 ```
+
 Stack configuration:
 
-
+```
+https://github.com/rafaelpereirad/Data-Lakes-cloud-free-tier/blob/main/ODP-VDF.xml
+```
 
 # Generate ssh key pair
 
@@ -56,12 +59,16 @@ Check created instances in **Compute > Instances**:
 To ssh to an instance:
 
 ```
-ssh -i /path/to/private/key opc@InstanceeIP
+ssh -i /path/to/private/key opc@InstanceIP
 ```
 
 # Ambari
 
-Access in a browser: Public_IP_Master:8080
+Access in a browser: 
+
+```
+Public_IP_Master:8080
+```
 
 <img width="548" alt="image" src="https://github.com/user-attachments/assets/fb63589a-5254-4400-b2d5-3a1d528eb138">
 
@@ -82,7 +89,7 @@ Give a name to the cluster:
 
 Click "Next"
 
-In Select Version page click "Add version", choose the ODP-VDF.xml file in this repo and click "Read Version Info":
+In Select Version page click "Add version", choose the ODP-VDF.xml file and click "Read Version Info":
 
 <img width="307" alt="image" src="https://github.com/user-attachments/assets/0bc1919a-4a4c-449d-aa22-dabf8763abaa">
 
