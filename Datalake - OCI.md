@@ -1,6 +1,17 @@
+# Download files 
+
+Terraform:
+
+```
+https://github.com/rafaelpereirad/Data-Lakes-cloud-free-tier/blob/main/oci-datalake-free-tier.zip
+```
+Stack configuration:
+
+
+
 # Generate ssh key pair
 
-Caso precise de authorized keys
+Keys to access the cluster:
 
 ```
 ssh-keygen -t rsa -b 2048
