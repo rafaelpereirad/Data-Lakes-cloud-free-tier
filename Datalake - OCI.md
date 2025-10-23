@@ -194,6 +194,28 @@ After setting up all services:
 
 <img width="1400" alt="image" src="https://github.com/user-attachments/assets/048ebbcd-98b4-454a-9f33-392813753d69">
 
+
+If this happens:
+
+```
+Error: Could not open client transport with JDBC Uri: jdbc:hive2://Master:10000/default: Failed to open new session: java.lang.RuntimeException: org.apache.hadoop.ipc.RemoteException(org.apache.hadoop.security.authorize.AuthorizationException): User: hive is not allowed to impersonate postgres (state=08S01,code=0)
+```
+
+Edit in Ambari *:
+
+<img width="963" alt="image" src="https://github.com/user-attachments/assets/dba63de1-3083-4715-b9dc-f73248a709e1">
+
+```
+hadoop.proxyuser.hive.groups
+hadoop.proxyuser.hive.hosts
+```
+
+Set hive.server2.enable.doAs as true:
+
+<img width="289" alt="image" src="https://github.com/user-attachments/assets/24c67011-9203-43b3-9117-dc86eb260814">
+
+Restart Hive
+ 
 # Interfaces
 
 HDFS:
