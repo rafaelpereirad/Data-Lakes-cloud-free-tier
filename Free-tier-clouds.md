@@ -183,14 +183,3 @@ Explore free Azure services. Available at: https://azure.microsoft.com/en-us/pri
 Get free hands-on experience with Google Cloud. Available at: https://cloud.google.com/free?hl=en (Accessed: 7 October 2024).
 
 Conditions: https://cloud.google.com/free/docs/free-cloud-features
-
-# IBM Cloud
-
-| Service | Type | Description | Free |
-|----------|----------|----------| ----------|
-| AnonTech ViziVault Platform | Manage personal information as-a-service safely, securely, and in compliance with data privacy regulations using ViziVault | Ram: 4 GB, Storage: 2 GB, No Backups, VCPU Cores: 2 | The free 30-day trial of the ViziVault Platform (Shared Resources Only) |
-| App Configuration | Centralized, in-flight configuration for web and mobile applications and distributed environments. | The monthly instance price includes 10 active entity IDs and 5,000 API calls | Includes all App Configuration capabilities for evaluation only. Not to be used for production | 
-| App ID | User Authentication and User Profiles for your apps. | 1000 monthly events and 1000 authorized users. | Authentication events occur when a token is issued. Tokens can be issued as a response to a sign-in request initiated by a user, or on behalf of the user by an app. Authenticated tokens last for 1 hour and anonymous tokens last for 30 days. Authorized users include any unique users that log in by using your service, including anonymous users. Example: if a user logs in with Facebook and later logs in by using Google, they are considered two separate authorized users. |
-
-
-
